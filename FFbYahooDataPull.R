@@ -46,7 +46,7 @@ GetYahooData <- function(year, week){
       #create temp Player string
       tempPull$Player <- str_trim(sapply(str_split(tempPull$Player, "\n"), "[[", 2))
       #get players position
-      tempPull$Pos <- str_trim(str_sub(tempPull$Player, start= -2))
+      tempPull$Pos <- playerList[i]
       #get players team
       tempPull$Team <- toupper(str_trim(str_sub(tempPull$Player, start=str_locate(tempPull$Player, "-")[,1]-4, end=str_locate(tempPull$Player, "-")[,1]-2)))
       #must be set last
